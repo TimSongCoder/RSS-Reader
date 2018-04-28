@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		50CC50DC20944FDF00D760DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC50DB20944FDF00D760DB /* AppDelegate.swift */; };
-		50CC50DE20944FDF00D760DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC50DD20944FDF00D760DB /* ViewController.swift */; };
+		50CC50DE20944FDF00D760DB /* RSSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC50DD20944FDF00D760DB /* RSSTableViewController.swift */; };
 		50CC50E120944FDF00D760DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CC50DF20944FDF00D760DB /* Main.storyboard */; };
 		50CC50E320944FE000D760DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CC50E220944FE000D760DB /* Assets.xcassets */; };
 		50CC50E620944FE000D760DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CC50E420944FE000D760DB /* LaunchScreen.storyboard */; };
+		50CC50F02094581600D760DB /* RSSElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC50EF2094581600D760DB /* RSSElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50CC50D820944FDF00D760DB /* RSS Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CC50DB20944FDF00D760DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50CC50DD20944FDF00D760DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50CC50DD20944FDF00D760DB /* RSSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewController.swift; sourceTree = "<group>"; };
 		50CC50E020944FDF00D760DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50CC50E220944FE000D760DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CC50E520944FE000D760DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50CC50E720944FE000D760DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50CC50EF2094581600D760DB /* RSSElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				50CC50DB20944FDF00D760DB /* AppDelegate.swift */,
-				50CC50DD20944FDF00D760DB /* ViewController.swift */,
+				50CC50DD20944FDF00D760DB /* RSSTableViewController.swift */,
+				50CC50EF2094581600D760DB /* RSSElement.swift */,
 				50CC50DF20944FDF00D760DB /* Main.storyboard */,
 				50CC50E220944FE000D760DB /* Assets.xcassets */,
 				50CC50E420944FE000D760DB /* LaunchScreen.storyboard */,
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CC50DE20944FDF00D760DB /* ViewController.swift in Sources */,
+				50CC50DE20944FDF00D760DB /* RSSTableViewController.swift in Sources */,
+				50CC50F02094581600D760DB /* RSSElement.swift in Sources */,
 				50CC50DC20944FDF00D760DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
