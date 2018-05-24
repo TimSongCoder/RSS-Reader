@@ -14,6 +14,7 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
     var temporaryItem = [String: String]()
     var temporaryItemTitle = ""
     var temporaryItemDescription = ""
+    var temporaryItemLink = ""
     var currentParsingElement: RSSElement = .unknown
     var isParsingItem = false
     
@@ -46,6 +47,8 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
             temporaryItemTitle = ""
         case .description:
             temporaryItemDescription = ""
+        case .link:
+            temporaryItemLink = ""
         default:
             break
         }
@@ -59,6 +62,8 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
             temporaryItemTitle.append(string)
         case .description:
             temporaryItemDescription.append(string)
+        case .link:
+            temporaryItemLink.append(string)
         default:
             break
         }
@@ -72,8 +77,9 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
         case .item:
             temporaryItem[RSSElement.title.rawValue] = temporaryItemTitle
             temporaryItem[RSSElement.description.rawValue] = temporaryItemDescription
+            temporaryItem[RSSElement.link.rawValue] = String(temporaryItemLink[temporaryItemLink.startIndex ..< temporaryItemLink.index(of: "\n")!])
             items.append(temporaryItem)
-        case .title, .description:
+        case .title, .description, .link:
             break;
         default:
             break
@@ -100,6 +106,15 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
         cell.textLabel?.text = itemForRow[RSSElement.title.rawValue]
         cell.detailTextLabel?.text = itemForRow[RSSElement.description.rawValue]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let feedItem = items[indexPath.row]
+        if let feedWebViewController =  self.storyboard?.instantiateViewController(withIdentifier: "FeedWebViewController") as? FeedViewController {
+            // Dependency injection
+            feedWebViewController.feed = feedItem
+            self.navigationController?.pushViewController(feedWebViewController, animated: true)
+        }
     }
 }
 
