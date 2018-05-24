@@ -71,7 +71,7 @@ class FeedViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         // Called when the web view needs to respond to an authentication challenge.
-        print("didReceive challenge: \(challenge.debugDescription)")
+        print("didReceive challenge:")
         completionHandler(.performDefaultHandling, nil)
     }
     

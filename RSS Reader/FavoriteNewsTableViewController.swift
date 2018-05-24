@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FavoriteNewsTableViewController: UITableViewController {
+class FavoriteNewsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var fetchedResultsController: NSFetchedResultsController<Feed>!
     
@@ -20,6 +20,7 @@ class FavoriteNewsTableViewController: UITableViewController {
         let feedsFetchReqeust: NSFetchRequest<Feed> = Feed.fetchRequest()
         feedsFetchReqeust.sortDescriptors = [NSSortDescriptor(key: "saveDate", ascending: false)]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: feedsFetchReqeust, managedObjectContext: DataController.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -27,6 +28,7 @@ class FavoriteNewsTableViewController: UITableViewController {
         }
     }
 
+    // MARK: Table view data source methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.fetchedObjects?.count ?? 0
     }
@@ -39,6 +41,7 @@ class FavoriteNewsTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: Table view delegate methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let feed = fetchedResultsController.object(at: indexPath)
         if let feedWebViewController =  self.storyboard?.instantiateViewController(withIdentifier: "FeedWebViewController") as? FeedViewController {
@@ -46,5 +49,42 @@ class FavoriteNewsTableViewController: UITableViewController {
             feedWebViewController.feedMO = feed
             self.navigationController?.pushViewController(feedWebViewController, animated: true)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            fetchedResultsController.managedObjectContext.delete(fetchedResultsController.object(at: indexPath))
+            do {
+                try fetchedResultsController.managedObjectContext.save()
+            }catch{
+                print("save object deletion with error: \(error.localizedDescription)")
+            }
+        case .insert:
+            fatalError("No implementation for insertion yet")
+            break
+        case .none:
+            break
+        }
+    }
+    
+    // MARK: Fetched results controller delegate methods
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        default:
+            fatalError("monitoring for change other than deletion or insertion is not implemented yet")
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
 }
