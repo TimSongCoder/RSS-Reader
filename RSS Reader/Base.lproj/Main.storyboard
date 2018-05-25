@@ -25,20 +25,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTK-et-QUk" userLabel="Title Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Title Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTK-et-QUk" userLabel="Title Label">
                                             <rect key="frame" x="20" y="20" width="335" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0N-9E-7jq" userLabel="Publish Date Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0N-9E-7jq" userLabel="Publish Date Label">
                                             <rect key="frame" x="20" y="48" width="69.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnO-ra-Qo7" userLabel="Detail Label">
-                                            <rect key="frame" x="20" y="73" width="113" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnO-ra-Qo7">
+                                            <rect key="frame" x="20" y="73" width="113" height="38.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -46,6 +46,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="fnO-ra-Qo7" firstAttribute="leading" secondItem="V0N-9E-7jq" secondAttribute="leading" id="7YJ-hi-kce"/>
+                                        <constraint firstAttribute="bottom" secondItem="fnO-ra-Qo7" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="ITE-Db-umd"/>
                                         <constraint firstAttribute="trailing" secondItem="dTK-et-QUk" secondAttribute="trailing" constant="20" symbolic="YES" id="Leg-Gn-DuD"/>
                                         <constraint firstItem="V0N-9E-7jq" firstAttribute="top" secondItem="dTK-et-QUk" secondAttribute="bottom" constant="8" symbolic="YES" id="eae-gR-qUt"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fnO-ra-Qo7" secondAttribute="trailing" constant="20" symbolic="YES" id="hIB-RI-zUP"/>
@@ -143,20 +144,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ip-1O-MzE" userLabel="Title Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ip-1O-MzE" userLabel="Title Label">
                                             <rect key="frame" x="20" y="20" width="335" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZX-0O-82D" userLabel="Publish Date Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZX-0O-82D" userLabel="Publish Date Label">
                                             <rect key="frame" x="20" y="48" width="69.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-rJ-Nsh" userLabel="Detail Label">
-                                            <rect key="frame" x="20" y="73" width="113" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-rJ-Nsh">
+                                            <rect key="frame" x="20" y="73" width="113" height="38.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -172,6 +173,7 @@
                                         <constraint firstItem="2ip-1O-MzE" firstAttribute="top" secondItem="T0N-PB-NJK" secondAttribute="top" constant="20" symbolic="YES" id="b08-lp-FDu"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kZX-0O-82D" secondAttribute="trailing" constant="20" symbolic="YES" id="nP7-YV-dXo"/>
                                         <constraint firstItem="kZX-0O-82D" firstAttribute="top" secondItem="2ip-1O-MzE" secondAttribute="bottom" constant="8" symbolic="YES" id="w9h-Fa-Bdu"/>
+                                        <constraint firstAttribute="bottom" secondItem="N0h-rJ-Nsh" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="wvS-SC-X5a"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
