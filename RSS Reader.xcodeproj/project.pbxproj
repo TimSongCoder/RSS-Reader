@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5000523220B69CBE00CEE1ED /* RSSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000523120B69CBE00CEE1ED /* RSSTableViewCell.swift */; };
 		506FD10A20B54A9E00D11344 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506FD10920B54A9E00D11344 /* FeedViewController.swift */; };
 		506FD10D20B55BC700D11344 /* Feeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 506FD10B20B55BC700D11344 /* Feeds.xcdatamodeld */; };
 		506FD10F20B55BFB00D11344 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506FD10E20B55BFB00D11344 /* DataController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5000523120B69CBE00CEE1ED /* RSSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewCell.swift; sourceTree = "<group>"; };
 		506FD10920B54A9E00D11344 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		506FD10C20B55BC700D11344 /* Feeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Feeds.xcdatamodel; sourceTree = "<group>"; };
 		506FD10E20B55BFB00D11344 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				50CC50DB20944FDF00D760DB /* AppDelegate.swift */,
+				5000523120B69CBE00CEE1ED /* RSSTableViewCell.swift */,
 				50CC50DD20944FDF00D760DB /* RSSTableViewController.swift */,
 				50CC50EF2094581600D760DB /* RSSElement.swift */,
 				506FD10920B54A9E00D11344 /* FeedViewController.swift */,
@@ -159,6 +162,7 @@
 				50CC50F02094581600D760DB /* RSSElement.swift in Sources */,
 				506FD11320B5667100D11344 /* FavoriteNewsTableViewController.swift in Sources */,
 				506FD10D20B55BC700D11344 /* Feeds.xcdatamodeld in Sources */,
+				5000523220B69CBE00CEE1ED /* RSSTableViewCell.swift in Sources */,
 				506FD10A20B54A9E00D11344 /* FeedViewController.swift in Sources */,
 				50CC50DC20944FDF00D760DB /* AppDelegate.swift in Sources */,
 			);
@@ -307,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E2447D2CLX;
 				INFOPLIST_FILE = "RSS Reader/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E2447D2CLX;
 				INFOPLIST_FILE = "RSS Reader/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

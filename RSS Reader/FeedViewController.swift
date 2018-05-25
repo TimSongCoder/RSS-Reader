@@ -32,7 +32,7 @@ class FeedViewController: UIViewController, WKNavigationDelegate {
             webView.load(URLRequest(url: feedURL))
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
-        self.title = "Apple Developer News"
+        self.title = "News Detail"
     }
 
     @objc func saveNews() {

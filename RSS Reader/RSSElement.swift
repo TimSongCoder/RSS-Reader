@@ -13,5 +13,6 @@ enum RSSElement: String {
     case title
     case description
     case link
+    case pubDate
     case unknown
 }

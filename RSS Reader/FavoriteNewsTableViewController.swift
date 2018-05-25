@@ -12,6 +12,13 @@ import CoreData
 class FavoriteNewsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var fetchedResultsController: NSFetchedResultsController<Feed>!
+    lazy var dateFormatter: DateFormatter = {
+        var tempFormatter = DateFormatter()
+        tempFormatter.dateStyle = .short
+        tempFormatter.timeStyle = .short
+        return tempFormatter
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +41,11 @@ class FavoriteNewsTableViewController: UITableViewController, NSFetchedResultsCo
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteFeedCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteFeedCell")! as! RSSTableViewCell
         let feed = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = feed.title
-        cell.detailTextLabel?.text = feed.feedDescription
+        cell.titleLabel.text = feed.title
+        cell.descriptionLabel.text = feed.feedDescription
+        cell.publishDateLabel.text = dateFormatter.string(from: feed.saveDate!)
         return cell
     }
     

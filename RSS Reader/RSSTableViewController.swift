@@ -15,12 +15,27 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
     var temporaryItemTitle = ""
     var temporaryItemDescription = ""
     var temporaryItemLink = ""
+    var temporaryItemPubDate = ""
     var currentParsingElement: RSSElement = .unknown
     var isParsingItem = false
     
+    lazy var dateFormatter: DateFormatter = {
+        var formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
+        return formatter
+    }()
+    
+    lazy var localizedDateFormatter: DateFormatter = {
+        var formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        print("Now: \(dateFormatter.string(from: Date())) using locale [\(dateFormatter.locale.identifier)] with current locale [\(Locale.current.identifier)]")
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DispatchQueue.global(qos: .userInitiated).async {
             guard let url = URL(string: "https://developer.apple.com/news/rss/news.rss"),
@@ -49,6 +64,8 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
             temporaryItemDescription = ""
         case .link:
             temporaryItemLink = ""
+        case .pubDate:
+            temporaryItemPubDate = ""
         default:
             break
         }
@@ -64,6 +81,8 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
             temporaryItemDescription.append(string)
         case .link:
             temporaryItemLink.append(string)
+        case .pubDate:
+            temporaryItemPubDate.append(string)
         default:
             break
         }
@@ -75,11 +94,12 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
         }
         switch element {
         case .item:
-            temporaryItem[RSSElement.title.rawValue] = temporaryItemTitle
+            temporaryItem[RSSElement.title.rawValue] = String(temporaryItemTitle[temporaryItemTitle.startIndex ..< temporaryItemTitle.index(of: "\n")!])
             temporaryItem[RSSElement.description.rawValue] = temporaryItemDescription
             temporaryItem[RSSElement.link.rawValue] = String(temporaryItemLink[temporaryItemLink.startIndex ..< temporaryItemLink.index(of: "\n")!])
+            temporaryItem[RSSElement.pubDate.rawValue] = String(temporaryItemPubDate[temporaryItemPubDate.startIndex ..< temporaryItemPubDate.index(of: "\n")!])
             items.append(temporaryItem)
-        case .title, .description, .link:
+        case .title, .description, .link, .pubDate:
             break;
         default:
             break
@@ -101,10 +121,11 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RSSItemCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RSSItemCell")! as! RSSTableViewCell
         let itemForRow = items[indexPath.row]
-        cell.textLabel?.text = itemForRow[RSSElement.title.rawValue]
-        cell.detailTextLabel?.text = itemForRow[RSSElement.description.rawValue]
+        cell.titleLabel.text = itemForRow[RSSElement.title.rawValue]
+        cell.publishDateLabel.text = localizedDateFormatter.string(from: dateFormatter.date(from: itemForRow[RSSElement.pubDate.rawValue]!)!)
+        cell.descriptionLabel.text = itemForRow[RSSElement.description.rawValue]
         return cell
     }
     
