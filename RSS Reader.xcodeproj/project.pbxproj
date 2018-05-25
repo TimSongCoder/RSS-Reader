@@ -13,6 +13,7 @@
 		506FD10F20B55BFB00D11344 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506FD10E20B55BFB00D11344 /* DataController.swift */; };
 		506FD11120B5637A00D11344 /* Feed+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506FD11020B5637A00D11344 /* Feed+Extensions.swift */; };
 		506FD11320B5667100D11344 /* FavoriteNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506FD11220B5667100D11344 /* FavoriteNewsTableViewController.swift */; };
+		507FC6AA20B7FD5600A81289 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FC6A920B7FD5600A81289 /* Formatters.swift */; };
 		50CC50DC20944FDF00D760DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC50DB20944FDF00D760DB /* AppDelegate.swift */; };
 		50CC50DE20944FDF00D760DB /* RSSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC50DD20944FDF00D760DB /* RSSTableViewController.swift */; };
 		50CC50E120944FDF00D760DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CC50DF20944FDF00D760DB /* Main.storyboard */; };
@@ -28,6 +29,8 @@
 		506FD10E20B55BFB00D11344 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		506FD11020B5637A00D11344 /* Feed+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feed+Extensions.swift"; sourceTree = "<group>"; };
 		506FD11220B5667100D11344 /* FavoriteNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNewsTableViewController.swift; sourceTree = "<group>"; };
+		507FC6A620B7E3C900A81289 /* Feeds 2 Add PubDate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Feeds 2 Add PubDate.xcdatamodel"; sourceTree = "<group>"; };
+		507FC6A920B7FD5600A81289 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		50CC50D820944FDF00D760DB /* RSS Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CC50DB20944FDF00D760DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50CC50DD20944FDF00D760DB /* RSSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 				506FD11220B5667100D11344 /* FavoriteNewsTableViewController.swift */,
 				506FD11020B5637A00D11344 /* Feed+Extensions.swift */,
 				506FD10E20B55BFB00D11344 /* DataController.swift */,
+				507FC6A920B7FD5600A81289 /* Formatters.swift */,
 				506FD10B20B55BC700D11344 /* Feeds.xcdatamodeld */,
 				50CC50DF20944FDF00D760DB /* Main.storyboard */,
 				50CC50E220944FE000D760DB /* Assets.xcassets */,
@@ -161,6 +165,7 @@
 				506FD10F20B55BFB00D11344 /* DataController.swift in Sources */,
 				50CC50F02094581600D760DB /* RSSElement.swift in Sources */,
 				506FD11320B5667100D11344 /* FavoriteNewsTableViewController.swift in Sources */,
+				507FC6AA20B7FD5600A81289 /* Formatters.swift in Sources */,
 				506FD10D20B55BC700D11344 /* Feeds.xcdatamodeld in Sources */,
 				5000523220B69CBE00CEE1ED /* RSSTableViewCell.swift in Sources */,
 				506FD10A20B54A9E00D11344 /* FeedViewController.swift in Sources */,
@@ -369,9 +374,10 @@
 		506FD10B20B55BC700D11344 /* Feeds.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				507FC6A620B7E3C900A81289 /* Feeds 2 Add PubDate.xcdatamodel */,
 				506FD10C20B55BC700D11344 /* Feeds.xcdatamodel */,
 			);
-			currentVersion = 506FD10C20B55BC700D11344 /* Feeds.xcdatamodel */;
+			currentVersion = 507FC6A620B7E3C900A81289 /* Feeds 2 Add PubDate.xcdatamodel */;
 			path = Feeds.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

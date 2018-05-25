@@ -12,13 +12,6 @@ import CoreData
 class FavoriteNewsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var fetchedResultsController: NSFetchedResultsController<Feed>!
-    lazy var dateFormatter: DateFormatter = {
-        var tempFormatter = DateFormatter()
-        tempFormatter.dateStyle = .short
-        tempFormatter.timeStyle = .short
-        return tempFormatter
-    }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +38,7 @@ class FavoriteNewsTableViewController: UITableViewController, NSFetchedResultsCo
         let feed = fetchedResultsController.object(at: indexPath)
         cell.titleLabel.text = feed.title
         cell.descriptionLabel.text = feed.feedDescription
-        cell.publishDateLabel.text = dateFormatter.string(from: feed.saveDate!)
+        cell.publishDateLabel.text = Formatters.userCurrentDateFormatter.string(from: feed.pubDate!)
         return cell
     }
     

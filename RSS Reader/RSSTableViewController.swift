@@ -19,20 +19,6 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
     var currentParsingElement: RSSElement = .unknown
     var isParsingItem = false
     
-    lazy var dateFormatter: DateFormatter = {
-        var formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
-        return formatter
-    }()
-    
-    lazy var localizedDateFormatter: DateFormatter = {
-        var formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        return formatter
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print("Now: \(dateFormatter.string(from: Date())) using locale [\(dateFormatter.locale.identifier)] with current locale [\(Locale.current.identifier)]")
@@ -124,7 +110,7 @@ class RSSTableViewController: UITableViewController, XMLParserDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RSSItemCell")! as! RSSTableViewCell
         let itemForRow = items[indexPath.row]
         cell.titleLabel.text = itemForRow[RSSElement.title.rawValue]
-        cell.publishDateLabel.text = localizedDateFormatter.string(from: dateFormatter.date(from: itemForRow[RSSElement.pubDate.rawValue]!)!)
+        cell.publishDateLabel.text = Formatters.userCurrentDateFormatter.string(from: Formatters.rssDateFormatter.date(from: itemForRow[RSSElement.pubDate.rawValue]!)!)
         cell.descriptionLabel.text = itemForRow[RSSElement.description.rawValue]
         return cell
     }

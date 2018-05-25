@@ -24,6 +24,7 @@ class FeedViewController: UIViewController, WKNavigationDelegate {
             feed[RSSElement.link.rawValue] =  feedMO.link
             feed[RSSElement.title.rawValue] = feedMO.title
             feed[RSSElement.description.rawValue] = feedMO.feedDescription
+            feed[RSSElement.pubDate.rawValue] = Formatters.rssDateFormatter.string(from: feedMO.pubDate!)
         } else {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(saveNews))
         }
@@ -43,6 +44,7 @@ class FeedViewController: UIViewController, WKNavigationDelegate {
         newFeedMO.link = feed[RSSElement.link.rawValue]
         newFeedMO.feedDescription = feed[RSSElement.description.rawValue]
         newFeedMO.saveDate = Date()
+        newFeedMO.pubDate = Formatters.rssDateFormatter.date(from: feed[RSSElement.pubDate.rawValue]!)
         do {
             try persistentContext.save()
             // TODO: Animate the action
