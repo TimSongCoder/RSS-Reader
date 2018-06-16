@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Title Label"; ObjectID = "2ip-1O-MzE"; */
+"2ip-1O-MzE.text" = "Title Label";
+
+/* Class = "UINavigationItem"; title = "RSS Reader"; ObjectID = "ByV-gB-hm6"; */
+"ByV-gB-hm6.title" = "RSS Reader";
+
+/* Class = "UILabel"; text = "Description Label"; ObjectID = "N0h-rJ-Nsh"; */
+"N0h-rJ-Nsh.text" = "Description Label";
+
+/* Class = "UILabel"; text = "Date Label"; ObjectID = "V0N-9E-7jq"; */
+"V0N-9E-7jq.text" = "Date Label";
+
+/* Class = "UILabel"; text = "Title Label"; ObjectID = "dTK-et-QUk"; */
+"dTK-et-QUk.text" = "Title Label";
+
+/* Class = "UILabel"; text = "Description Label"; ObjectID = "fnO-ra-Qo7"; */
+"fnO-ra-Qo7.text" = "Description Label";
+
+/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "gND-yp-aDc"; */
+"gND-yp-aDc.title" = "收藏";
+
+/* Class = "UILabel"; text = "Date Label"; ObjectID = "kZX-0O-82D"; */
+"kZX-0O-82D.text" = "Date Label";
